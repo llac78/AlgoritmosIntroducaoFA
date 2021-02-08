@@ -8,7 +8,7 @@ public class VetorInteiros {
 	public static void main(String[] args) {
 
 		int counter = 0;
-		int[] numeros = new int[5];
+		int[] numeros = new int[10];
 		int vazio = 0;
 		boolean maior = false;
 		boolean menor = false;
@@ -57,17 +57,15 @@ public class VetorInteiros {
 					System.out.print(numeros[i] + " ");
 				}
 				System.out.println("");
-				vazio = 0;
-				maior = false;
-			} else if (pos == 4) {
-				if (numeros[4] == 0) {
+			} else if (pos == 9) {
+				if (numeros[9] == 0) {
 					for (int i = 0; i < numeros.length; i++) {
 						if (numeros[i] == 0) {
 							vazio++;
 						}
 					}
 					if (vazio > 0 && vazio == numeros.length) {
-						numeros[4] = num;
+						numeros[9] = num;
 						counter++;
 					} else {
 						for (int i = 0; i < numeros.length - 1; i++) {
@@ -76,10 +74,9 @@ public class VetorInteiros {
 							}
 						}
 						if (menor) {
-							System.out
-									.println("Valor não permitido, pois há valores maiores em alguma posição anterior.".toUpperCase());
+							System.out.println("Valor não permitido, pois há valores maiores em alguma posição anterior.".toUpperCase());
 						} else {
-							numeros[4] = num;
+							numeros[9] = num;
 							counter++;
 						}
 					}
@@ -91,8 +88,6 @@ public class VetorInteiros {
 					System.out.print(numeros[i] + " ");
 				}
 				System.out.println("");
-				vazio = 0;
-				menor = false;
 			} else {
 				if (numeros[pos] == 0) {
 					for (int i = 0; i < numeros.length; i++) {
@@ -111,17 +106,10 @@ public class VetorInteiros {
 								}
 							}
 						}
-						for (int i = pos; i < numeros.length; i++) { // verificar se o número informado é maior que os das posições posteriores
+						for (int i = pos + 1; i < numeros.length; i++) { // verificar se o número informado é maior que os das posições posteriores
 							if (numeros[i] > 0) {
 								if (num > numeros[i]) {
 									maior = true;
-								}
-							}
-						}
-						for (int i = 0; i < pos; i++) { // verificar se o número informado é menor que os das posições anteriores
-							if (numeros[i] > 0) {
-								if (num < numeros[i]) {
-									menor = true;
 								}
 							}
 						}
@@ -150,11 +138,11 @@ public class VetorInteiros {
 				} else {
 					System.out.println("Esta posição está indisponível. Tente novamente.".toUpperCase());
 				}
-				vazio = 0;
-				menor = false;
-				maior = false;
-				antesDepoisOK = false;
 			}
+			vazio = 0;
+			menor = false;
+			maior = false;
+			antesDepoisOK = false;
 			if (counter == numeros.length) {
 				System.out.println("Saindo..");
 				break;
