@@ -2,7 +2,7 @@ package com.introducao.exA7;
 
 import java.util.Scanner;
 
-public class VetorInteiros {
+public class ExA7_VetorInteiros {
 
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {

@@ -2,7 +2,7 @@ package com.introducao.exA7;
 
 import java.util.Scanner;
 
-public class VetorExcluirElemento {
+public class ExA7_VetorExcluirElemento {
 
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
