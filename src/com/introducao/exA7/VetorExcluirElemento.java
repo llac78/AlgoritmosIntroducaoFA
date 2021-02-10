@@ -14,15 +14,22 @@ public class VetorExcluirElemento {
 		boolean menor = false;
 		boolean antesDepoisOK = false;
 		int qtdNumerosExcluidos = 0;
+		boolean vetorCompleto = false;
 
-		while (counter < numeros.length) {
+		do {
 			System.out.print("Digite um número: ");
 			Scanner scNum = new Scanner(System.in);
 			int num = scNum.nextInt();
-
+			
+			if(vetorCompleto) {
+				System.out.println("Não é mais possível inserir elementos.".toUpperCase());
+				break;
+			}
+			
 			System.out.print("Digite a posição desejada: ");
 			Scanner scPos = new Scanner(System.in);
 			int pos = scPos.nextInt();
+			
 			if (pos < 0 || pos > numeros.length) {
 				System.out.println("Posição inexistente.".toUpperCase());
 			} else if (pos == 0) {
@@ -145,16 +152,10 @@ public class VetorExcluirElemento {
 			maior = false;
 			antesDepoisOK = false;
 			if (counter == numeros.length) {
-				System.out.println("Saindo..");
-				break;
+				vetorCompleto = true;
 			}
-		}
+		} while(counter <= numeros.length);
 		
-		System.out.println("**********************************");
-		for (int i = 0; i < numeros.length; i++) {
-			System.out.print(numeros[i] + " ");
-		}
-		System.out.println("");
 		System.out.println("**********************************");
 		
 		boolean estaNoVetor = false;
